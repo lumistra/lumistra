@@ -1,9 +1,9 @@
-import type { CTALinkData, LinkData } from './shared';
+import type { CMSLink, LinkData } from './shared';
 
 export type SidenavData = {
   sitemap: LinkData[]
   socials: LinkData[]
-  cta: CTALinkData
+  cta: CMSLink
 };
 
 export type NavigationData = {

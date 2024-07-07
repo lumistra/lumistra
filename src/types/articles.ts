@@ -1,16 +1,6 @@
 import type { MetaData } from './components';
-import type { ImageData } from './shared';
+import type { CTALinkData, ImageData } from './shared';
 import type { ISbStoryData, SbBlokData } from '@storyblok/react';
-
-export type Article = {
-  author: string,
-  cover: string,
-  publishedAt: string,
-  slug: string,
-  title: string,
-};
-
-export type Articles = Article[];
 
 export type HeadlineData = {
   title: string
@@ -24,4 +14,11 @@ export type ArticleData = {
   headline: [HeadlineData],
   recommended: ISbStoryData<ArticleData>
   body: SbBlokData[],
+};
+
+export type LatestData = {
+  title: string
+  section: string
+  cta: [CTALinkData]
+  articles: ISbStoryData<ArticleData>[]
 };

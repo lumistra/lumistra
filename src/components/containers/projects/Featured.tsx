@@ -4,32 +4,34 @@ import CtaLink from '@/components/elements/CtaLink';
 import Image from '@/components/elements/Image';
 import Link from '@/components/elements/Link';
 import SeeMore from '@/components/elements/SeeMore';
-import useProjects from '@/content/projects';
+import { useScreenSize } from '@/hooks/useScreenSize';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/projects/featured.module.scss';
 import { getOrderNumber, routes } from '@/utils';
 import Section from '../Section';
 import type { CursorPosition } from '@/components/elements/SeeMore';
+import type { FeaturedData } from '@/types/projects';
+import type { SbBlokData } from '@storyblok/react';
 
 type Props = {
-  className?: string
-  textPosition: 'top' | 'bottom'
+  blok: SbBlokData & FeaturedData
 };
 
 export default function Featured(props: Props) {
   const { t } = useTranslations();
-  const { projects } = useProjects();
+  const { isTablet } = useScreenSize();
   const [modalShow, setModalShow] = useState(false);
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const currentProject = projects[currentIndex];
+  const currentProject = props.blok.projects[currentIndex];
+  const currentProjectOverview = currentProject.content.overview[0];
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prev) => {
         const newIndex = prev + 1;
-        if (newIndex >= projects.length) return 0;
+        if (newIndex >= props.blok.projects.length) return 0;
 
         return newIndex;
       });
@@ -38,7 +40,7 @@ export default function Featured(props: Props) {
     return () => {
       clearInterval(intervalId);
     };
-  }, [projects]);
+  }, [props.blok.projects]);
 
   useEffect(() => {
     const handleMove = ({ x, y }: MouseEvent) => {
@@ -70,13 +72,13 @@ export default function Featured(props: Props) {
   };
 
   return (
-    <Section containerClassName={classNames(style.featuredWrapper, props.className, {
-      [style.featuredTop]: props.textPosition === 'top',
-      [style.featuredBottom]: props.textPosition === 'bottom',
+    <Section containerClassName={classNames(style.featuredWrapper, {
+      [style.featuredTop]: props.blok.textPosition === 'top' || (!props.blok.textPosition && isTablet),
+      [style.featuredBottom]: props.blok.textPosition === 'bottom' || (!props.blok.textPosition && !isTablet),
     })}
     >
       <div className={classNames('featured-text', style.featuredTextWrapper)}>
-        <span>{currentProject.title}</span>
+        <span>{currentProjectOverview.title}</span>
         <CtaLink className={style.desktopCTA} href={routes.project(currentProject.slug)}>
           {t('globals.see_full_project')}
         </CtaLink>
@@ -88,8 +90,8 @@ export default function Featured(props: Props) {
       <Link className="featured-cover" href={routes.project(currentProject.slug)}>
         <Image
           className={style.featuredCover}
-          src={currentProject.cover}
-          alt={currentProject.title}
+          src={currentProjectOverview.cover.filename}
+          alt={currentProjectOverview.cover.alt}
           onMouseEnter={() => handleShowModal(true)}
           onMouseLeave={() => handleShowModal(false)}
         />

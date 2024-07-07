@@ -7,6 +7,7 @@ import Main from '@/components/pages/Main';
 import { defaultLocale, locales } from '@/hooks/useTranslations';
 import { generateStaticPaths, routes } from '@/utils';
 import { article } from '../../__mocks__/article';
+import { designSystem } from '../../__mocks__/designSystem';
 import { footer as footerMock } from '../../__mocks__/footer';
 import { header as headerMock } from '../../__mocks__/header';
 import { cmsLinks } from '../../__mocks__/links';
@@ -58,14 +59,14 @@ export async function getStaticProps(props: StaticProps) {
   if (process.env.mockApi) {
     let page = null;
     switch (true) {
-      case includes(slugPath, `${routes.news}/`):
+      case includes(slugPath, 'articles/'):
         page = article;
         break;
-      case includes(slugPath, `${routes.work}/`):
+      case includes(slugPath, 'projects/'):
         page = project;
         break;
       default:
-        page = null;
+        page = designSystem;
         break;
     }
 
@@ -92,9 +93,9 @@ export async function getStaticProps(props: StaticProps) {
         'work.projects',
         'featured.projects',
         'selected.projects',
-        'project.recommended',
         'news.articles',
         'latest.articles',
+        'project.recommended',
         'article.recommended',
       ],
     });
@@ -111,7 +112,7 @@ export async function getStaticProps(props: StaticProps) {
 
 export async function getStaticPaths() {
   const storyblokApi = getStoryblokApi();
-  const { data } = process.env.mockApi ? { data: cmsLinks } : await storyblokApi.get('cdn/links', { version: 'published' });
+  const { data } = process.env.mockApi ? { data: cmsLinks } : await storyblokApi.get('cdn/links', { version: 'published', per_page: 1000 });
 
   const links = reduce(data.links, (res, link) => {
     if (link.is_folder) return res;

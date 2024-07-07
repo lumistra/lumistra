@@ -26,6 +26,9 @@ export default function Main(props: Props) {
         {map(props.blok.meta, (meta: SbBlokData) => (
           <StoryblokComponent key={meta._uid} blok={meta} />
         ))}
+        {map(props.blok.body, (component: SbBlokData) => (
+          <StoryblokComponent key={component._uid} blok={component} />
+        ))}
       </main>
     );
   }

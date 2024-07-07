@@ -11,19 +11,20 @@ export type ImageData = {
   },
 };
 
-export type LinkData = {
-  _uid: string,
-  label: string,
-  icon: 'instagram' | 'facebook' | 'linkedin',
-  link: {
-    url: string,
-    linktype: 'url' | 'email',
-  },
-};
-
-export type CTALinkData = {
+export type CMSLink = {
   url: string,
   email: string,
   linktype: 'url' | 'email',
   target?: '_self' | '_blank',
+};
+
+export type LinkData = {
+  label: string,
+  icon: 'instagram' | 'facebook' | 'linkedin',
+  link: CMSLink,
+};
+
+export type CTALinkData = {
+  text: string,
+  link: CMSLink,
 };

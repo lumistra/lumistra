@@ -5,7 +5,6 @@ import useArticles from '@/content/articles';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/news.module.scss';
-import Latest from '../containers/articles/Latest';
 import WantToPublish from '../containers/articles/WantToPublish';
 import Section from '../containers/Section';
 import Article from '../elements/Article';
@@ -49,7 +48,7 @@ export default function News() {
         <title>{t('news.title')}</title>
         <meta name="transition-title" content={t('routes.articles')} />
       </Head>
-      <Latest className={style.latestWrapper} minHeight={120} hideCTA />
+      {/* <Latest className={style.latestWrapper} minHeight={120} hideCTA /> */}
       <Section containerClassName={style.articlesWrapper}>
         <TextMask identifier="animation-sub-title" className={style.articlesTitle}>
           <h2>

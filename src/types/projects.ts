@@ -1,15 +1,6 @@
 import type { MetaData } from './components';
-import type { ImageData } from './shared';
+import type { CTALinkData, ImageData } from './shared';
 import type { ISbRichtext, ISbStoryData, SbBlokData } from '@storyblok/react';
-
-export type Project = {
-  title: string,
-  slug: string,
-  cover: string,
-  selected: boolean,
-};
-
-export type Projects = Project[];
 
 export type OverviewData = {
   cover: ImageData
@@ -22,4 +13,16 @@ export type ProjectData = {
   overview: [OverviewData],
   recommended: ISbStoryData<ProjectData>
   body: SbBlokData[],
+};
+
+export type FeaturedData = {
+  textPosition?: 'top' | 'bottom'
+  projects: ISbStoryData<ProjectData>[]
+};
+
+export type SelectedData = {
+  title: string
+  section: string
+  cta: [CTALinkData]
+  projects: ISbStoryData<ProjectData>[]
 };

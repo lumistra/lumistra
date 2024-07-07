@@ -4,7 +4,6 @@ import { map } from 'lodash';
 import Article from '@/components/elements/Article';
 import CtaLink from '@/components/elements/CtaLink';
 import SeeMore from '@/components/elements/SeeMore';
-import useArticles from '@/content/articles';
 import { useScreenSize } from '@/hooks/useScreenSize';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import useTranslations from '@/hooks/useTranslations';
@@ -12,8 +11,11 @@ import style from '@/styles/articles/latest.module.scss';
 import { routes } from '@/utils';
 import Section from '../Section';
 import type { CursorPosition } from '@/components/elements/SeeMore';
+import type { LatestData } from '@/types/articles';
+import type { SbBlokData } from '@storyblok/react';
 
 type Props = {
+  blok: SbBlokData & LatestData
   className?: string
   minHeight?: number
   hideCTA?: boolean
@@ -21,7 +23,6 @@ type Props = {
 
 export default function Latest(props: Props) {
   const { t } = useTranslations();
-  const { latest } = useArticles();
   const { isTablet } = useScreenSize();
   const [modalShow, setModalShow] = useState(false);
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
@@ -69,7 +70,7 @@ export default function Latest(props: Props) {
       </div>
       <SeeMore cursorPosition={cursorPosition} show={modalShow} />
       <div className={style.articlesWrapper}>
-        {map(latest, (article) => (
+        {map(props.blok.articles, (article) => (
           <Article
             key={article.slug}
             article={article}
