@@ -1,5 +1,4 @@
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
-import { format } from 'date-fns';
 import { get, isArray, map } from 'lodash';
 import { useRouter } from 'next/router';
 import useTranslations, { defaultLocale } from '@/hooks/useTranslations';
@@ -8,7 +7,6 @@ import { routes } from '@/utils';
 import Section from '../containers/Section';
 import CtaLink from '../elements/CtaLink';
 import Image from '../elements/Image';
-import Lightbox from '../elements/Lightbox';
 import Link from '../elements/Link';
 import type { ArticleData, HeadlineData } from '@/types/articles';
 import type { SbBlokData } from '@storyblok/react';
@@ -25,8 +23,7 @@ export default function Article(props: Props) {
     : props.blok.recommended;
   const recommendedArticle = get(recommended, 'content.headline[0]', null) as HeadlineData | null;
   const article = props.blok;
-  const headline = article.headline[0];
-  const publishedAt = new Date(headline.publishedAt);
+  const [headline] = article.headline;
 
   return (
     <main {...storyblokEditable(props.blok)}>
@@ -44,19 +41,9 @@ export default function Article(props: Props) {
         />
       ))}
 
-      <Section containerClassName={style.heroWrapper}>
-        <h1 className={style.heroTitle}>{headline.title}</h1>
-        <span className={style.heroDate}>
-          Written by {headline.author} on {format(publishedAt, 'MMM io yyyy')}
-        </span>
-        <Lightbox image={headline.cover}>
-          <Image
-            className={style.heroCover}
-            src={headline.cover.filename}
-            alt={headline.cover.alt}
-          />
-        </Lightbox>
-      </Section>
+      {map(article.headline, (blok: SbBlokData) => (
+        <StoryblokComponent key={blok._uid} blok={blok} />
+      ))}
 
       <Section containerClassName={style.articleWrapper}>
         {map(article.body, (component) => (

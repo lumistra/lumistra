@@ -2,7 +2,6 @@ import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
 import { map } from 'lodash';
 import About from '@/components/pages/About';
 import Contact from '@/components/pages/Contact';
-import Home from '@/components/pages/Home';
 import News from '@/components/pages/News';
 import PrivacyPolicy from '@/components/pages/PrivacyPolicy';
 import Services from '@/components/pages/Services';
@@ -46,8 +45,6 @@ export default function Main(props: Props) {
       return <About />;
     case rawPath === routes.services:
       return <Services />;
-    case rawPath === routes.home:
-      return <Home />;
     default:
       return <NotFound />;
   }

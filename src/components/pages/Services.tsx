@@ -1,42 +1,11 @@
-import { map } from 'lodash';
-import Head from 'next/head';
-import Arrow from '@/assets/svg/arrow.svg';
-import Section from '@/components/containers/Section';
-import useServices from '@/content/services';
-import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
-import useTranslations from '@/hooks/useTranslations';
-import style from '@/styles/services.module.scss';
-import { routes } from '@/utils';
-import ContactSection from '../containers/Contact';
-import Pitch from '../containers/services/Pitch';
-import Selection from '../containers/services/Selection';
-import CtaLink from '../elements/CtaLink';
-import TextMask from '../elements/TextMask';
-
 export default function Services() {
-  const { t } = useTranslations();
-  const { groups } = useServices();
-
-  useScrollAnimations({
-    heroTitle: {
-      animation: AnimationType.fadeUp,
-      query: '.hero-animation-title',
-      offset: 0,
-    },
-    heroCTA: {
-      animation: AnimationType.fadeUp,
-      query: '.hero-cta-animation',
-      offset: 0,
-    },
-  });
-
   return (
     <main>
-      <Head>
+      {/* <Head>
         <title>{t('services.title')}</title>
         <meta name="transition-title" content={t('routes.services')} />
-      </Head>
-      <Section containerClassName={style.heroWrapper}>
+      </Head> */}
+      {/* <Section containerClassName={style.heroWrapper}>
         <TextMask identifier="hero-animation-title">
           <h1>{t('services.hero')}</h1>
         </TextMask>
@@ -46,9 +15,9 @@ export default function Services() {
             <Arrow />
           </span>
         </TextMask>
-      </Section>
-      <Pitch namespace="services" />
-      <Section containerClassName={style.servicesWrapper}>
+      </Section> */}
+      {/* <Pitch namespace="services" /> */}
+      {/* <Section containerClassName={style.servicesWrapper}>
         <span className={style.servicesTitle}>{t('services.bio.title')}</span>
         <span className={style.servicesTitle}>{t('services.bio.section')}</span>
         <p className={style.servicesParagraph}>{t('services.bio.paragraph')}</p>
@@ -62,9 +31,9 @@ export default function Services() {
             </div>
           ))}
         </div>
-      </Section>
-      <Selection hideHero />
-      <Section
+      </Section> */}
+      {/* <Selection hideHero /> */}
+      {/* <Section
         className={style.checkInBackgroundWrapper}
         containerClassName={style.checkInWrapper}
       >
@@ -73,12 +42,12 @@ export default function Services() {
         <CtaLink className={style.checkInCTA} href={routes.about + '#workflow'}>
           {t('services.bio.check_in.cta')}
         </CtaLink>
-      </Section>
-      <ContactSection
+      </Section> */}
+      {/* <ContactSection
         className={style.noBorderContact}
         ctaClassName={style.ctaAction}
         title={t('contact.cta.title-alt')}
-      />
+      /> */}
     </main>
   );
 }

@@ -63,6 +63,28 @@ export type WorkflowData = {
   steps: WorkflowStepData[]
 };
 
+type PitchItemData = {
+  title: string
+  paragraph: string
+};
+
+export type PitchData = {
+  items: PitchItemData[]
+};
+
+export type WantToPublishData = {
+  background: 'dark' | 'gray'
+  title: string
+  paragraph: ISbRichtext
+};
+
+export type WhatWeDoData = {
+  title: string
+  section: string
+  paragraph: string
+  services: null
+};
+
 export type ContactData = {
   small: boolean
   title: string

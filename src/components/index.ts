@@ -1,5 +1,6 @@
 import AltBackgroundSection from '@/components/containers/AltBackgroundSection';
 import AnimatedLineSection from '@/components/containers/AnimatedLineSection';
+import Headline from '@/components/containers/articles/Headline';
 import Latest from '@/components/containers/articles/Latest';
 import Contact from '@/components/containers/Contact';
 import Footer from '@/components/containers/Footer';
@@ -9,6 +10,7 @@ import Sidenav from '@/components/containers/navigation/Sidenav';
 import Featured from '@/components/containers/projects/Featured';
 import Overview from '@/components/containers/projects/Overview';
 import Selected from '@/components/containers/projects/Selected';
+import Pitch from '@/components/containers/services/Pitch';
 import Selection from '@/components/containers/services/Selection';
 import Workflow from '@/components/containers/Workflow';
 import DoubleImage from '@/components/elements/layouts/DoubleImage';
@@ -20,6 +22,8 @@ import Meta from '@/components/elements/Meta';
 import Article from '@/components/pages/Article';
 import Main from '@/components/pages/Main';
 import Project from '@/components/pages/Project';
+import WantToPublish from './containers/articles/WantToPublish';
+import WhatWeDo from './containers/services/WhatWeDo';
 
 const components = {
   // Content-Type block
@@ -38,12 +42,16 @@ const components = {
   latest: Latest,
   selection: Selection,
   workflow: Workflow,
+  pitch: Pitch,
+  whatWeDo: WhatWeDo,
+  wantToPublish: WantToPublish,
   animatedLineSection: AnimatedLineSection,
   altBackgroundSection: AltBackgroundSection,
   contact: Contact,
 
   // Projects & Articles
   overview: Overview,
+  headline: Headline,
   singleImage: SingleImage,
   doubleImage: DoubleImage,
   tripleImage: TripleImage,

@@ -11573,6 +11573,539 @@ export const designSystem = {
         component: 'contact',
         _editable: '<!--#storyblok#{"name": "contact", "space": "286844", "uid": "9dc22978-844a-4ebd-aaf6-bfd2698899f4", "id": "519687689"}-->',
       },
+      // services page
+      {
+        _uid: '155b1109-d53b-4ad5-82f0-b5f7f8e5cf57',
+        title: 'Overview of what we do\nand how can we do it for you.',
+        footnote: true,
+        gradient: false,
+        component: 'hero',
+        _editable: '<!--#storyblok#{"name": "hero", "space": "286844", "uid": "155b1109-d53b-4ad5-82f0-b5f7f8e5cf57", "id": "519687768"}-->',
+      },
+      {
+        _uid: 'e7beeba3-2ee6-4626-912c-776815319873',
+        items: [
+          {
+            _uid: '929921ea-ef24-4fec-8d2e-0ec2d5dbeb74',
+            title: 'Branding',
+            component: 'pitchItem',
+            paragraph: 'Our primary focus is crafting memorable and unique visual identities for passionate brands. We understand the importance of how a future identity represents a company, so we dedicate our time and effort to delivering the best solutions that are both enduring and adaptable to evolving needs.',
+            _editable: '<!--#storyblok#{"name": "pitchItem", "space": "286844", "uid": "929921ea-ef24-4fec-8d2e-0ec2d5dbeb74", "id": "519687768"}-->',
+          },
+          {
+            _uid: 'a7ee2cd3-f312-4e2c-a345-2149a2857c54',
+            title: 'Packaging',
+            component: 'pitchItem',
+            paragraph: 'In a market brimming with outstanding packaging, your product can stand out too. Through our meticulous attention to detail and rigorous testing, we ensure that our packaging design solutions provide the shelf presence your product deserves.',
+            _editable: '<!--#storyblok#{"name": "pitchItem", "space": "286844", "uid": "a7ee2cd3-f312-4e2c-a345-2149a2857c54", "id": "519687768"}-->',
+          },
+          {
+            _uid: '5f36c35b-5ae2-4b61-80d5-4f3f81e2dd25',
+            title: 'Marketing',
+            component: 'pitchItem',
+            paragraph: 'To ensure your brand is ready for launch, we address all your marketing needs. If you prefer to create your own content, we offer user-friendly templates, allowing you to focus on what matters most while we handle the rest.',
+            _editable: '<!--#storyblok#{"name": "pitchItem", "space": "286844", "uid": "5f36c35b-5ae2-4b61-80d5-4f3f81e2dd25", "id": "519687768"}-->',
+          },
+        ],
+        component: 'pitch',
+        _editable: '<!--#storyblok#{"name": "pitch", "space": "286844", "uid": "e7beeba3-2ee6-4626-912c-776815319873", "id": "519687768"}-->',
+      },
+      {
+        _uid: '3b8c9634-604f-48e5-a859-b670107cd3f1',
+        title: 'What we do',
+        section: 'Services',
+        services: {
+          tbody: [
+            {
+              _uid: '9f7dfe6c-7ae5-48e9-bd26-515b716c8d25',
+              body: [
+                {
+                  _uid: '898f243b-25ee-491d-8595-193a8cff0c90',
+                  value: 'Research & analisys',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "898f243b-25ee-491d-8595-193a8cff0c90", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '1d41e18e-ffd1-44ec-83ff-776213e2ab0d',
+                  value: 'Visual identity',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "1d41e18e-ffd1-44ec-83ff-776213e2ab0d", "id": "519687768"}-->',
+                },
+                {
+                  _uid: 'b7083dca-49a9-4b90-8dd7-3f1a5062d83d',
+                  value: 'UX/UI design',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "b7083dca-49a9-4b90-8dd7-3f1a5062d83d", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '158ab51b-60e7-4fbc-a3f4-8bc788a49a9c',
+                  value: 'Brand story',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "158ab51b-60e7-4fbc-a3f4-8bc788a49a9c", "id": "519687768"}-->',
+                },
+              ],
+              component: '_table_row',
+              _editable: '<!--#storyblok#{"name": "_table_row", "space": "286844", "uid": "9f7dfe6c-7ae5-48e9-bd26-515b716c8d25", "id": "519687768"}-->',
+            },
+            {
+              _uid: '01718b17-1f77-4d1a-96cb-65d59c9a21b2',
+              body: [
+                {
+                  _uid: 'd35818b5-def5-42d9-8a4e-c1f9571e244b',
+                  value: 'Brand positioning',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "d35818b5-def5-42d9-8a4e-c1f9571e244b", "id": "519687768"}-->',
+                },
+                {
+                  _uid: 'c40a2c66-01a0-4e46-92d7-4c94f991d725',
+                  value: 'Verbal identity',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "c40a2c66-01a0-4e46-92d7-4c94f991d725", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '119d21a3-007d-4275-b14c-d5cc6deeef88',
+                  value: 'Interaction design',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "119d21a3-007d-4275-b14c-d5cc6deeef88", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '1067dcb6-baf1-4e6e-81ed-1a4ba62deadf',
+                  value: 'Advertising',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "1067dcb6-baf1-4e6e-81ed-1a4ba62deadf", "id": "519687768"}-->',
+                },
+              ],
+              component: '_table_row',
+              _editable: '<!--#storyblok#{"name": "_table_row", "space": "286844", "uid": "01718b17-1f77-4d1a-96cb-65d59c9a21b2", "id": "519687768"}-->',
+            },
+            {
+              _uid: 'b52e38c1-3581-4e5d-bedd-7490dff64ece',
+              body: [
+                {
+                  _uid: '2962377f-a841-4298-91bb-0d3b959a3daa',
+                  value: 'Brand narrative',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "2962377f-a841-4298-91bb-0d3b959a3daa", "id": "519687768"}-->',
+                },
+                {
+                  _uid: 'f7f4e7e4-fad2-4dc3-8f75-18e8caa1e151',
+                  value: 'Motion design',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "f7f4e7e4-fad2-4dc3-8f75-18e8caa1e151", "id": "519687768"}-->',
+                },
+                {
+                  _uid: 'af60cc9c-b213-4e61-97e3-4a8396a0874c',
+                  value: 'Digital design systems',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "af60cc9c-b213-4e61-97e3-4a8396a0874c", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '10af922b-55f7-4ccb-9495-e1cc59215f70',
+                  value: 'Merchandise',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "10af922b-55f7-4ccb-9495-e1cc59215f70", "id": "519687768"}-->',
+                },
+              ],
+              component: '_table_row',
+              _editable: '<!--#storyblok#{"name": "_table_row", "space": "286844", "uid": "b52e38c1-3581-4e5d-bedd-7490dff64ece", "id": "519687768"}-->',
+            },
+            {
+              _uid: '737662f3-9415-4c9d-a22b-66c79cd79b09',
+              body: [
+                {
+                  _uid: '93e3d87c-0490-4520-9cff-48e8f3325e22',
+                  value: 'Communication',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "93e3d87c-0490-4520-9cff-48e8f3325e22", "id": "519687768"}-->',
+                },
+                {
+                  _uid: 'cafe1c5a-985a-47f2-8c8a-bd548d6ba0a5',
+                  value: 'Packaging & label',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "cafe1c5a-985a-47f2-8c8a-bd548d6ba0a5", "id": "519687768"}-->',
+                },
+                {
+                  _uid: 'bdeb4747-f7ac-458b-b271-3e1fb0b430a2',
+                  value: 'Digital prototyping',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "bdeb4747-f7ac-458b-b271-3e1fb0b430a2", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '15fa9fa1-2133-480d-be0f-7c867123ec9a',
+                  value: 'Editorial Design',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "15fa9fa1-2133-480d-be0f-7c867123ec9a", "id": "519687768"}-->',
+                },
+              ],
+              component: '_table_row',
+              _editable: '<!--#storyblok#{"name": "_table_row", "space": "286844", "uid": "737662f3-9415-4c9d-a22b-66c79cd79b09", "id": "519687768"}-->',
+            },
+            {
+              _uid: 'c20175db-3fbd-4e2c-9804-338c1d4e670e',
+              body: [
+                {
+                  _uid: '93d9cf1c-935b-4210-9389-4672bae6b981',
+                  value: 'Content strategy',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "93d9cf1c-935b-4210-9389-4672bae6b981", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '5f1c6494-dd21-45bd-bbac-a921bc3796f5',
+                  value: 'Publications',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "5f1c6494-dd21-45bd-bbac-a921bc3796f5", "id": "519687768"}-->',
+                },
+                {
+                  _uid: 'd302e8bd-c995-4069-ba65-48d86b9242ff',
+                  value: 'Website design',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "d302e8bd-c995-4069-ba65-48d86b9242ff", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '8805c379-f21b-4262-a0cc-76665bde597c',
+                  value: 'Social media',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "8805c379-f21b-4262-a0cc-76665bde597c", "id": "519687768"}-->',
+                },
+              ],
+              component: '_table_row',
+              _editable: '<!--#storyblok#{"name": "_table_row", "space": "286844", "uid": "c20175db-3fbd-4e2c-9804-338c1d4e670e", "id": "519687768"}-->',
+            },
+            {
+              _uid: '426713cd-9432-4b74-85f5-6ae029eaa9ca',
+              body: [
+                {
+                  _uid: '84b5f683-2be9-42da-9165-2d30f91dbbf7',
+                  value: 'Design strategy',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "84b5f683-2be9-42da-9165-2d30f91dbbf7", "id": "519687768"}-->',
+                },
+                {
+                  _uid: 'd49ee792-670a-4193-9c59-94b73df82d02',
+                  value: 'Typography',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "d49ee792-670a-4193-9c59-94b73df82d02", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '15dbeb26-d1ca-447b-b9ee-2cac3f94ef7b',
+                  value: 'Marketing materials',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "15dbeb26-d1ca-447b-b9ee-2cac3f94ef7b", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '6a6f8696-e88b-4a1d-8010-add11f0efa30',
+                  value: 'Signage',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "6a6f8696-e88b-4a1d-8010-add11f0efa30", "id": "519687768"}-->',
+                },
+              ],
+              component: '_table_row',
+              _editable: '<!--#storyblok#{"name": "_table_row", "space": "286844", "uid": "426713cd-9432-4b74-85f5-6ae029eaa9ca", "id": "519687768"}-->',
+            },
+            {
+              _uid: 'dd499ead-0a13-483b-a5b2-3dab6b9c3809',
+              body: [
+                {
+                  _uid: 'e6fb5c00-42e8-4424-8ccb-97f5eaf381aa',
+                  value: 'Digital strategy',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "e6fb5c00-42e8-4424-8ccb-97f5eaf381aa", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '921bd6e3-4c4b-49d8-bb3b-df2009791592',
+                  value: 'Illustration',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "921bd6e3-4c4b-49d8-bb3b-df2009791592", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '81f656b3-2223-4d4c-a747-016f1bf2caa3',
+                  value: 'Ad creative',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "81f656b3-2223-4d4c-a747-016f1bf2caa3", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '5f4e3184-f7f4-4475-9c41-c5ef217096c1',
+                  value: '',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "5f4e3184-f7f4-4475-9c41-c5ef217096c1", "id": "519687768"}-->',
+                },
+              ],
+              component: '_table_row',
+              _editable: '<!--#storyblok#{"name": "_table_row", "space": "286844", "uid": "dd499ead-0a13-483b-a5b2-3dab6b9c3809", "id": "519687768"}-->',
+            },
+            {
+              _uid: '22aec080-d516-4dab-8775-1b8182fd705c',
+              body: [
+                {
+                  _uid: '1e64a58d-cf8e-4db7-879b-6aa4f3fa9fe9',
+                  value: 'Social media strategy',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "1e64a58d-cf8e-4db7-879b-6aa4f3fa9fe9", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '26bb742c-8c19-4b3f-a2bb-c4cdb7e6b49b',
+                  value: 'Brand guidelines',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "26bb742c-8c19-4b3f-a2bb-c4cdb7e6b49b", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '57c27195-283a-4cd7-8781-edfc659b2b00',
+                  value: 'App design',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "57c27195-283a-4cd7-8781-edfc659b2b00", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '8253b3fb-2728-4069-b87e-c0998ef33f7c',
+                  value: '',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "8253b3fb-2728-4069-b87e-c0998ef33f7c", "id": "519687768"}-->',
+                },
+              ],
+              component: '_table_row',
+              _editable: '<!--#storyblok#{"name": "_table_row", "space": "286844", "uid": "22aec080-d516-4dab-8775-1b8182fd705c", "id": "519687768"}-->',
+            },
+            {
+              _uid: '5392e603-a107-4d5a-b740-816c7129275c',
+              body: [
+                {
+                  _uid: 'dd49fea5-b8b1-46e1-882a-f31bd4c225d7',
+                  value: 'Naming',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "dd49fea5-b8b1-46e1-882a-f31bd4c225d7", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '2dd00ffa-6f5c-4071-a359-d4b6f484e428',
+                  value: 'Art & illustration',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "2dd00ffa-6f5c-4071-a359-d4b6f484e428", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '06ef914a-4f64-467d-9420-7b6f2e2cfabc',
+                  value: 'Social media creative',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "06ef914a-4f64-467d-9420-7b6f2e2cfabc", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '7e182661-ff49-4fc0-9a35-56010292c572',
+                  value: '',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "7e182661-ff49-4fc0-9a35-56010292c572", "id": "519687768"}-->',
+                },
+              ],
+              component: '_table_row',
+              _editable: '<!--#storyblok#{"name": "_table_row", "space": "286844", "uid": "5392e603-a107-4d5a-b740-816c7129275c", "id": "519687768"}-->',
+            },
+            {
+              _uid: '2b4e795d-b752-48c8-b8db-a82457a71647',
+              body: [
+                {
+                  _uid: '6949cdec-735d-4321-a452-8a7e037dcc7c',
+                  value: '',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "6949cdec-735d-4321-a452-8a7e037dcc7c", "id": "519687768"}-->',
+                },
+                {
+                  _uid: 'c118cf4b-1479-408b-8005-a7048258d7e4',
+                  value: '',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "c118cf4b-1479-408b-8005-a7048258d7e4", "id": "519687768"}-->',
+                },
+                {
+                  _uid: '6e6684ff-e21f-430b-aecb-1204ec1fbd0f',
+                  value: 'Presentation design',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "6e6684ff-e21f-430b-aecb-1204ec1fbd0f", "id": "519687768"}-->',
+                },
+                {
+                  _uid: 'a65f63ff-1aad-46ca-982b-937c80932582',
+                  value: '',
+                  component: '_table_col',
+                  _editable: '<!--#storyblok#{"name": "_table_col", "space": "286844", "uid": "a65f63ff-1aad-46ca-982b-937c80932582", "id": "519687768"}-->',
+                },
+              ],
+              component: '_table_row',
+              _editable: '<!--#storyblok#{"name": "_table_row", "space": "286844", "uid": "2b4e795d-b752-48c8-b8db-a82457a71647", "id": "519687768"}-->',
+            },
+          ],
+          thead: [
+            {
+              _uid: '899d5625-488a-44fa-b33d-bc60cfc193db',
+              value: 'Brand strategy',
+              component: '_table_head',
+              _editable: '<!--#storyblok#{"name": "_table_head", "space": "286844", "uid": "899d5625-488a-44fa-b33d-bc60cfc193db", "id": "519687768"}-->',
+            },
+            {
+              _uid: '519d2394-a41d-470f-841e-42fe89c304c4',
+              value: 'Brand design',
+              component: '_table_head',
+              _editable: '<!--#storyblok#{"name": "_table_head", "space": "286844", "uid": "519d2394-a41d-470f-841e-42fe89c304c4", "id": "519687768"}-->',
+            },
+            {
+              _uid: '96fd9630-547d-405b-a3ac-047ba187a895',
+              value: 'Digital design',
+              component: '_table_head',
+              _editable: '<!--#storyblok#{"name": "_table_head", "space": "286844", "uid": "96fd9630-547d-405b-a3ac-047ba187a895", "id": "519687768"}-->',
+            },
+            {
+              _uid: '46619c37-a91d-4e54-a4f6-2b1b4005efbc',
+              value: 'Brand communication',
+              component: '_table_head',
+              _editable: '<!--#storyblok#{"name": "_table_head", "space": "286844", "uid": "46619c37-a91d-4e54-a4f6-2b1b4005efbc", "id": "519687768"}-->',
+            },
+          ],
+          fieldtype: 'table',
+        },
+        component: 'whatWeDo',
+        paragraph: 'Our range of services cover almost everything you might need for your next project. If you can’t find it from the list, you can always scroll down and type in the service you need to see if we can help you.',
+        _editable: '<!--#storyblok#{"name": "whatWeDo", "space": "286844", "uid": "3b8c9634-604f-48e5-a859-b670107cd3f1", "id": "519687768"}-->',
+      },
+      {
+        _uid: '1d7d652e-de8e-4d26-b0ce-9ee900abde83',
+        heroHide: true,
+        services: 'logo design\nlogo\nlogotype\nlogomark\nbrand identity development\nbrand identity\nbrand guidelines\nbranding\nbrand development\nbranding strategy\nbrand design\nbusiness card design\nbusiness card\nbrochure design\nbrochure\nflyer design\nflyer\nposter design\nposter\nwebsite design\nweb design\nweb development\nweb coding\nui/ux design\nui/ux\nlanding page design\nlanding page development\nsocial media post graphics\nsocial media posts\nsocial media carousel\nsocial media banner design\nsocial media ad\ninfographic design\ninfographic\nPowerPoint presentation design\nPowerPoint template\ntemplate design\ndigital advertisement design\ndigital marketing\ndigital ad\ndigital design\ndigital banners\nprint advertisement design\ndesign for print\nvisuals for print\nad for print\npackaging design\npackaging\nproduct label design\nlabel design\nbook cover design\nbook cover illustration\nbooklet design\nebook design\nmagazine layout design\nlayout design\nlayout template\nlayout\nnewsletter design\nnewsletter template\nweb banner design\nprint banner design\ncustom illustration\nillustration\nui/ux design for mobile apps\nui/ux design for web apps\nicon set design\niconography\nicons\nemail newsletter template design\nsignage design\nmenu design \nannual report design\ntrade show booth design\nvehicle wrap design\nCD/DVD cover design\nvinyl design\ninvitation design\ngreeting card design\nresume design\nportfolio design\nmockup creation for products\nt-shirt design\napparel design\nposter for large format printing\nenvironmental graphics\nmural design\ncustom typography design\ntypography\nletterhead design\nenvelope design\nretail signage design\nsticker design\nresearch & analysis\nbrand positioning\nbrand narrative\ncommunication\ncontent strategy\ndesign strategy\ndigital strategy\nsocial media strategy\nnaming\nvisual identity\nverbal identity\nmotion design\npackaging & label\npublications\nart & illustration\ninteraction design\ndigital design systems\ndigital prototyping\nwebsite design\nmarketing materials\nad creative\napp design\nsocial media creative\npresentation design\nbrand story\nadvertising\nmerchandise\neditorial design\nsocial media\nsignage',
+        component: 'selection',
+        heroTitle: '',
+        idleTitle: 'Ready when you are.',
+        heroParagraph: {
+          type: 'doc',
+          content: [
+            {
+              type: 'paragraph',
+            },
+          ],
+        },
+        idleParagraph: {
+          type: 'doc',
+          content: [
+            {
+              type: 'paragraph',
+              content: [
+                {
+                  text: 'You can type in the service you need and get an answer right away.',
+                  type: 'text',
+                },
+              ],
+            },
+          ],
+        },
+        negativeTitle: 'We don’t do that, but...',
+        positiveTitle: 'We can help you with that.',
+        inputNoResults: 'No results...',
+        inputStartText: 'I need',
+        inputPlaceholder: 'write a service here',
+        negativeParagraph: {
+          type: 'doc',
+          content: [
+            {
+              type: 'paragraph',
+              content: [
+                {
+                  text: 'If you think that is something we can help you with, you can always reach out to us at ',
+                  type: 'text',
+                },
+                {
+                  text: 'info@studiolumistra.com',
+                  type: 'text',
+                  marks: [
+                    {
+                      type: 'link',
+                      attrs: {
+                        href: 'info@studiolumistra.com',
+                        uuid: null,
+                        anchor: null,
+                        target: '_self',
+                        linktype: 'email',
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        positiveParagraph: {
+          type: 'doc',
+          content: [
+            {
+              type: 'paragraph',
+              content: [
+                {
+                  text: 'The service you need is something we can help you with. Feel free to explore more or ',
+                  type: 'text',
+                },
+                {
+                  text: 'get in touch',
+                  type: 'text',
+                  marks: [
+                    {
+                      type: 'link',
+                      attrs: {
+                        href: 'info@studiolumistra.com',
+                        uuid: null,
+                        anchor: null,
+                        target: '_self',
+                        linktype: 'email',
+                      },
+                    },
+                  ],
+                },
+                {
+                  text: '.',
+                  type: 'text',
+                },
+              ],
+            },
+          ],
+        },
+        _editable: '<!--#storyblok#{"name": "selection", "space": "286844", "uid": "1d7d652e-de8e-4d26-b0ce-9ee900abde83", "id": "519687768"}-->',
+      },
+      {
+        cta: [
+          {
+            _uid: 'aa91ea82-4521-40b9-8601-88226a1db564',
+            link: {
+              id: '',
+              url: '/about/#workflow',
+              linktype: 'url',
+              fieldtype: 'multilink',
+              cached_url: '/about/#workflow',
+            },
+            text: 'See our creative process',
+            component: 'ctaLink',
+            _editable: '<!--#storyblok#{"name": "ctaLink", "space": "286844", "uid": "aa91ea82-4521-40b9-8601-88226a1db564", "id": "519687768"}-->',
+          },
+        ],
+        _uid: '32987d24-e614-4ba1-8263-dcf7c2d0251d',
+        title: 'Ta-Daa Moment',
+        animated: false,
+        footnote: false,
+        component: 'altBackgroundSection',
+        paragraph: 'With attention to detail, we execute the strategy, ensuring consistency across all assets and communications.',
+        background: 'primary',
+        _editable: '<!--#storyblok#{"name": "altBackgroundSection", "space": "286844", "uid": "32987d24-e614-4ba1-8263-dcf7c2d0251d", "id": "519687768"}-->',
+      },
+      {
+        cta: [
+          {
+            _uid: '9c327fdb-bbf5-4bc4-914e-fcc40c632b8b',
+            link: {
+              id: '',
+              url: '/contact',
+              linktype: 'url',
+              fieldtype: 'multilink',
+              cached_url: '/contact',
+            },
+            text: 'Contact us',
+            component: 'ctaLink',
+            _editable: '<!--#storyblok#{"name": "ctaLink", "space": "286844", "uid": "9c327fdb-bbf5-4bc4-914e-fcc40c632b8b", "id": "519687768"}-->',
+          },
+        ],
+        _uid: 'dd90520f-36e1-4c3c-aee8-c5e9b7ed28e5',
+        small: false,
+        title: 'Get in touch.',
+        component: 'contact',
+        _editable: '<!--#storyblok#{"name": "contact", "space": "286844", "uid": "dd90520f-36e1-4c3c-aee8-c5e9b7ed28e5", "id": "519687768"}-->',
+      },
     ],
     meta: [
       {
