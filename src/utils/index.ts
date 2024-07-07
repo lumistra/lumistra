@@ -1,6 +1,6 @@
 import Parser from 'html-react-parser';
 import {
-  compact, filter, flatten, forEach, includes, isEmpty, isString, map, replace, split,
+  compact, forEach, includes, map, replace, split,
 } from 'lodash';
 import { defaultLocale, locales } from '@/hooks/useTranslations';
 
@@ -9,16 +9,14 @@ export const isProd = process.env.NODE_ENV === 'production';
 export const routes = {
   home: '/',
   work: '/work',
-  project: (slug: string) => `/work/${slug}`,
+  project: (slug: string) => `/projects/${slug}`,
   about: '/about',
   contact: '/contact',
   services: '/services',
-  articles: '/articles',
+  news: '/news',
   article: (slug: string) => `/articles/${slug}`,
   privacyPolicy: '/privacy-policy',
 };
-
-const sitemap = filter(routes, isString);
 
 export const getRawPath = (path: string, stripLocale: boolean = true) => {
   let newPath = path;
@@ -40,18 +38,7 @@ export const getRawPath = (path: string, stripLocale: boolean = true) => {
 export const generateStaticPaths = (cmsLinks: string[]) => {
   const defaultLocaleMatch = `/${defaultLocale}`;
 
-  const staticLinks = flatten(map(sitemap, (route) => map(locales, (locale) => {
-    const slug = compact(split(route, '/'));
-    let slugPath;
-    if (locale.default) {
-      slugPath = isEmpty(slug) ? [''] : slug;
-    } else {
-      slugPath = [locale.value, ...slug];
-    }
-
-    return { params: { slug: slugPath } };
-  })),
-  );
+  const staticLinks = [{ params: { slug: ['privacy-policy'] } }];
 
   const dynamicLinks = map(cmsLinks, (link) => {
     const isDefaultLocaleRoute = includes(link, defaultLocaleMatch);

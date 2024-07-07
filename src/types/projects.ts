@@ -1,5 +1,5 @@
 import type { MetaData } from './components';
-import type { CMSImage } from './shared';
+import type { ImageData } from './shared';
 import type { ISbRichtext, ISbStoryData, SbBlokData } from '@storyblok/react';
 
 export type Project = {
@@ -12,7 +12,7 @@ export type Project = {
 export type Projects = Project[];
 
 export type OverviewData = {
-  cover: CMSImage
+  cover: ImageData
   title: string
   paragraph: ISbRichtext
 };

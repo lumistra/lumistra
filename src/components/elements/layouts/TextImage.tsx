@@ -4,14 +4,14 @@ import style from '@/styles/layouts.module.scss';
 import Image from '../Image';
 import Lightbox from '../Lightbox';
 import RichText from '../RichText';
-import type { CMSImage } from '@/types/shared';
+import type { ImageData } from '@/types/shared';
 import type { ISbRichtext, SbBlokData } from '@storyblok/react';
 
 type Props = {
   blok: SbBlokData & {
     align: 'left' | 'right'
     text?: ISbRichtext
-    image: CMSImage
+    image: ImageData
   }
 };
 

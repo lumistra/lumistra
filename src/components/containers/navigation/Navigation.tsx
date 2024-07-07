@@ -6,12 +6,15 @@ import Logo from '@/assets/svg/logo.svg';
 import Link from '@/components/elements/Link';
 import Menu from '@/components/elements/Menu';
 import { useScreenSize } from '@/hooks/useScreenSize';
-import useTranslations from '@/hooks/useTranslations';
-import { routes } from '@/utils';
 import Sidenav from './Sidenav';
+import type { NavigationData } from '@/types/globals';
+import type { SbBlokData } from '@storyblok/react';
 
-export default function Navigation() {
-  const { t } = useTranslations();
+type Props = {
+  blok: SbBlokData & NavigationData
+};
+
+export default function Navigation(props: Props) {
   const { isDesktop } = useScreenSize();
   const [isTop, setIsTop] = useState(true);
   const [isSidenavOpen, setIsSidenavOpen] = useState(false);
@@ -32,12 +35,6 @@ export default function Navigation() {
   const handleSideMenuToggle = () => {
     setIsSidenavOpen(!isSidenavOpen);
   };
-
-  const navigation = [
-    { label: t('routes.work'), value: routes.work },
-    { label: t('routes.about'), value: routes.about },
-    { label: t('routes.contact'), value: routes.contact },
-  ];
 
   return (
     <>
@@ -62,10 +59,10 @@ export default function Navigation() {
             minimized: !isTop,
           })}
           >
-            {isTop && map(navigation, (link) => (
+            {isTop && map(props.blok.links, (link) => (
               <Link
-                key={link.value}
-                href={link.value}
+                key={link.link.url}
+                href={link.link.url}
                 className={classNames('nav-link', {
                   'nav-visible': !isSidenavOpen,
                   'nav-hidden': isSidenavOpen,
@@ -84,7 +81,7 @@ export default function Navigation() {
           </div>
         </div>
       </nav>
-      <Sidenav isOpen={isSidenavOpen} onClose={handleSideMenuToggle} />
+      <Sidenav data={props.blok.sidenav[0]} isOpen={isSidenavOpen} onClose={handleSideMenuToggle} />
     </>
   );
 }

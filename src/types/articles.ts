@@ -1,5 +1,5 @@
 import type { MetaData } from './components';
-import type { CMSImage } from './shared';
+import type { ImageData } from './shared';
 import type { ISbStoryData, SbBlokData } from '@storyblok/react';
 
 export type Article = {
@@ -16,7 +16,7 @@ export type HeadlineData = {
   title: string
   author: string
   publishedAt: string
-  cover: CMSImage
+  cover: ImageData
 };
 
 export type ArticleData = {

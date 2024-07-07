@@ -3,12 +3,12 @@ import { map } from 'lodash';
 import style from '@/styles/layouts.module.scss';
 import Image from '../Image';
 import Lightbox from '../Lightbox';
-import type { CMSImage } from '@/types/shared';
+import type { ImageData } from '@/types/shared';
 
 type Props = {
   blok: SbBlokData & {
-    firstImage: CMSImage
-    secondImage: CMSImage
+    firstImage: ImageData
+    secondImage: ImageData
   }
 };
 

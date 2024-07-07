@@ -61,7 +61,7 @@ export default function Latest(props: Props) {
             {t('news.latest.title')}
           </span>
           {!props.hideCTA && (
-            <CtaLink className={style.latestDesktopCTA} href={routes.articles}>
+            <CtaLink className={style.latestDesktopCTA} href={routes.news}>
               {t('globals.read_all')}
             </CtaLink>
           )}
@@ -79,7 +79,7 @@ export default function Latest(props: Props) {
           />
         ))}
         {!props.hideCTA && (
-          <CtaLink className={style.latestMobileCTA} href={routes.articles}>
+          <CtaLink className={style.latestMobileCTA} href={routes.news}>
             {t('globals.read_all')}
           </CtaLink>
         )}
