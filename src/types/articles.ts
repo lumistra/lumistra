@@ -1,4 +1,4 @@
-import type { MetaData } from './components';
+import type { MetaData, WantToPublishData } from './components';
 import type { CTALinkData, ImageData } from './shared';
 import type { ISbStoryData, SbBlokData } from '@storyblok/react';
 
@@ -21,4 +21,12 @@ export type LatestData = {
   section: string
   cta: [CTALinkData]
   articles: ISbStoryData<ArticleData>[]
+};
+
+export type NewsData = {
+  meta: [MetaData]
+  latest: [LatestData]
+  subTitle: string
+  articles: ISbStoryData<ArticleData>[]
+  wantToPublish: [WantToPublishData]
 };

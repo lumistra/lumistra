@@ -15,11 +15,14 @@ export default function WantToPublish(props: Props) {
       className={classNames({
         [style.backgroundBlack]: props.blok.background === 'dark',
         [style.backgroundGray]: props.blok.background === 'gray',
+        [style.spacingTop]: props.blok.spacingTop,
       })}
       containerClassName={style.wantToPublishWrapper}
     >
       <h3>{props.blok.title}</h3>
-      <RichText>{props.blok.paragraph}</RichText>
+      <RichText className={style.wtpParagraph}>
+        {props.blok.paragraph}
+      </RichText>
     </Section>
   );
 }

@@ -95,23 +95,3 @@
     }
   }
 }
-
-.noBorderContact {
-  border: none;
-  margin-bottom: 120px;
-  margin-top: 120px;
-
-  @media screen and (max-width: $laptop) {
-    margin-bottom: 0;
-    margin-top: 0;
-
-    .ctaAction {
-      background-color: $white !important;
-      color: $black !important;
-
-      svg path {
-        stroke: $primary !important;
-      }
-    }
-  }
-}

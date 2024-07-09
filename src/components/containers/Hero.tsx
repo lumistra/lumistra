@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import Arrow from '@/assets/svg/arrow.svg';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import useTranslations from '@/hooks/useTranslations';
@@ -37,7 +38,10 @@ function Hero(props: Props) {
   }
 
   return (
-    <Section containerClassName={style.heroWrapper}>
+    <Section containerClassName={classNames(style.heroWrapper, {
+      [style.spacingBottom]: props.blok.spacingBottom,
+    })}
+    >
       <TextMask identifier="hero-animation-text" className={style.heroTitle}>
         <h1>{props.blok.title}</h1>
       </TextMask>

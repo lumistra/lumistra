@@ -3,22 +3,25 @@ import StoryblokStory from '@storyblok/react/story';
 import { includes, reduce, some } from 'lodash';
 import CookieConsent from '@/components/elements/CookieConsent';
 import PageTransition from '@/components/elements/PageTransition';
-import Main from '@/components/pages/Main';
 import { defaultLocale, locales } from '@/hooks/useTranslations';
 import { generateStaticPaths, routes } from '@/utils';
-import { article } from '../../__mocks__/article';
-import { designSystem } from '../../__mocks__/designSystem';
-import { footer as footerMock } from '../../__mocks__/footer';
-import { header as headerMock } from '../../__mocks__/header';
-import { cmsLinks } from '../../__mocks__/links';
-import { project } from '../../__mocks__/project';
+import { about } from '@mocks/about';
+import { article } from '@mocks/article';
+import { contact } from '@mocks/contact';
+import { footer as footerMock } from '@mocks/footer';
+import { header as headerMock } from '@mocks/header';
+import { home } from '@mocks/home';
+import { cmsLinks } from '@mocks/links';
+import { news } from '@mocks/news';
+import { project } from '@mocks/project';
+import { services } from '@mocks/services';
+import { work } from '@mocks/work';
 import type { ISbStoryData } from '@storyblok/react';
 
 type Props = {
   header: ISbStoryData
   footer: ISbStoryData
   page: ISbStoryData | null
-  slug: string
 };
 
 export default function Page(props: Props) {
@@ -26,11 +29,7 @@ export default function Page(props: Props) {
     <>
       <div id="page-wrapper">
         <StoryblokStory story={props.header} />
-        {props.page ? (
-          <StoryblokStory story={props.page} />
-        ) : (
-          <Main slug={props.slug} />
-        )}
+        <StoryblokStory story={props.page} />
       </div>
       <StoryblokStory story={props.footer} />
       <PageTransition />
@@ -65,14 +64,31 @@ export async function getStaticProps(props: StaticProps) {
       case includes(slugPath, 'projects/'):
         page = project;
         break;
+      case slugPath === '/news':
+        page = news;
+        break;
+      case slugPath === '/work':
+        page = work;
+        break;
+      case slugPath === '/services':
+        page = services;
+        break;
+      case slugPath === '/about':
+        page = about;
+        break;
+      case slugPath === '/contact':
+        page = contact;
+        break;
+      case !slugPath:
+        page = home;
+        break;
       default:
-        page = designSystem;
+        page = null;
         break;
     }
 
     return {
       props: {
-        slug: `${slugPath}/`,
         header: headerMock,
         footer: footerMock,
         page,
@@ -102,7 +118,6 @@ export async function getStaticProps(props: StaticProps) {
 
   return {
     props: {
-      slug: `${slugPath}/`,
       header: header.story,
       footer: footer.story,
       page: page.story,

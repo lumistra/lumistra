@@ -1,4 +1,5 @@
 import { type SbBlokData, storyblokEditable } from '@storyblok/react';
+import Section from '@/components/containers/Section';
 import style from '@/styles/layouts.module.scss';
 import Image from '../Image';
 import Lightbox from '../Lightbox';
@@ -12,13 +13,15 @@ type Props = {
 
 export default function SingleImage(props: Props) {
   return (
-    <Lightbox image={props.blok.image}>
-      <Image
-        className={style.singleImage}
-        src={props.blok.image.filename}
-        alt={props.blok.image.alt}
-        storyblokEditable={storyblokEditable(props.blok)}
-      />
-    </Lightbox>
+    <Section>
+      <Lightbox image={props.blok.image}>
+        <Image
+          className={style.singleImage}
+          src={props.blok.image.filename}
+          alt={props.blok.image.alt}
+          storyblokEditable={storyblokEditable(props.blok)}
+        />
+      </Lightbox>
+    </Section>
   );
 }

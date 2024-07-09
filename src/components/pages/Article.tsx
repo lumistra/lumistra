@@ -45,11 +45,11 @@ export default function Article(props: Props) {
         <StoryblokComponent key={blok._uid} blok={blok} />
       ))}
 
-      <Section containerClassName={style.articleWrapper}>
+      <div className={style.articleWrapper}>
         {map(article.body, (component) => (
           <StoryblokComponent key={component._uid} blok={component} />
         ))}
-      </Section>
+      </div>
 
       {recommended && recommendedArticle && (
         <Section containerClassName={style.recommendedWrapper}>

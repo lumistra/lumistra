@@ -75,7 +75,10 @@ function AltBackgroundSection(props: Props) {
         'animate-in': props.blok.animated && wordIndex >= words.length,
       })}
       >
-        <p className={style.altBackgroundParagraph}>
+        <p className={classNames(style.altBackgroundParagraph, {
+          [style.gridParagraph]: props.blok.gridParagraph,
+        })}
+        >
           {props.blok.paragraph}
         </p>
       </div>
@@ -89,7 +92,7 @@ function AltBackgroundSection(props: Props) {
       )}
       {props.blok.footnote && (
         <TextMask identifier="alt-background-animation">
-          <span className={style.altBackgroundCTA}>
+          <span className={style.altBackgroundFootnote}>
             {t('globals.scroll')}
             <Arrow />
           </span>

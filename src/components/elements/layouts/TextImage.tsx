@@ -1,5 +1,6 @@
 import { storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
+import Section from '@/components/containers/Section';
 import style from '@/styles/layouts.module.scss';
 import Image from '../Image';
 import Lightbox from '../Lightbox';
@@ -17,7 +18,7 @@ type Props = {
 
 export default function TextImage(props: Props) {
   return (
-    <div className={style.textWrapper} {...storyblokEditable(props.blok)}>
+    <Section containerClassName={style.textWrapper} {...storyblokEditable(props.blok)}>
       <RichText className={classNames({
         [style.alignLeft]: props.blok.align === 'left',
         [style.alignRight]: props.blok.align === 'right',
@@ -35,6 +36,6 @@ export default function TextImage(props: Props) {
           alt={props.blok.image.alt}
         />
       </Lightbox>
-    </div>
+    </Section>
   );
 }

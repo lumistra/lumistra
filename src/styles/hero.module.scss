@@ -15,6 +15,14 @@
     padding-top: 0;
   }
 
+  &.spacingBottom {
+    padding-bottom: 400px;
+
+    @media screen and (max-width: $tablet) {
+      padding-bottom: 180px;
+    }
+  }
+
   .heroTitle {
     display: flex;
     font-size: 86px;

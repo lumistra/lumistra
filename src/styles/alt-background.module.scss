@@ -71,14 +71,46 @@
       @media screen and (max-width: $mobile) {
         font-size: 24px;
       }
+
+      &.gridParagraph {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        @media screen and (max-width: 1200px) {
+          display: block;
+        }
+      }
     }
 
     .altBackgroundCTA {
       align-items: center;
+      color: $white;
+      display: flex;
+      font-size: 21px;
+      gap: 0 1ch;
+      margin-top: 240px;
+
+      @media screen and (max-width: $mobile) {
+        font-size: 16px;
+        margin-top: 160px;
+      }
+
+      svg {
+        height: 16px;
+        width: 16px;
+
+        * {
+          stroke: $white !important;
+        }
+      }
+    }
+
+    .altBackgroundFootnote {
+      align-items: center;
       color: $gray;
       display: flex;
       font-size: 21px;
-      gap: 1ch;
+      gap: 0 1ch;
       margin-top: 240px;
 
       @media screen and (max-width: $mobile) {

@@ -32,11 +32,11 @@ export default function Project(props: Props) {
         <StoryblokComponent key={overview._uid} blok={overview} />
       ))}
 
-      <Section containerClassName={style.projectWrapper}>
+      <div className={style.projectWrapper}>
         {map(project.body, (component) => (
           <StoryblokComponent key={component._uid} blok={component} />
         ))}
-      </Section>
+      </div>
 
       {recommended && recommendedProject && (
         <Section containerClassName={style.recommendedWrapper}>

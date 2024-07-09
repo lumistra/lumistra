@@ -18,6 +18,12 @@ export type HeroData = {
   title: string
   gradient: boolean
   footnote: boolean
+  spacingBottom: boolean
+};
+
+export type AboutSectionData = {
+  title: string
+  paragraph: ISbRichtext
 };
 
 export type AnimatedLineData = {
@@ -32,6 +38,7 @@ export type AltBackgroundSectionData = {
   paragraph: string
   cta?: [CTALinkData]
   background: 'dark' | 'primary'
+  gridParagraph: boolean
   animated: boolean
   footnote: boolean
 };
@@ -74,19 +81,27 @@ export type PitchData = {
 
 export type WantToPublishData = {
   background: 'dark' | 'gray'
+  spacingTop: boolean
   title: string
   paragraph: ISbRichtext
+};
+
+type Serviceitem = {
+  title: string,
+  list: string,
 };
 
 export type WhatWeDoData = {
   title: string
   section: string
   paragraph: string
-  services: null
+  services: Serviceitem[]
 };
 
 export type ContactData = {
   small: boolean
+  noBorder: boolean
+  mobileInvertColors: boolean
   title: string
   cta: [CTALinkData]
 };

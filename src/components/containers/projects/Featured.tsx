@@ -72,33 +72,46 @@ export default function Featured(props: Props) {
   };
 
   return (
-    <Section containerClassName={classNames(style.featuredWrapper, {
-      [style.featuredTop]: props.blok.textPosition === 'top' || (!props.blok.textPosition && isTablet),
-      [style.featuredBottom]: props.blok.textPosition === 'bottom' || (!props.blok.textPosition && !isTablet),
-    })}
-    >
-      <div className={classNames('featured-text', style.featuredTextWrapper)}>
-        <span>{currentProjectOverview.title}</span>
-        <CtaLink className={style.desktopCTA} href={routes.project(currentProject.slug)}>
+    <>
+      {props.blok.show && (
+        <Section containerClassName={style.featuredHeaderWrapper}>
+          <h3>{props.blok.title}</h3>
+          {props.blok.cta && (
+            <CtaLink href={props.blok.cta[0].link.url}>
+              {props.blok.cta[0].text}
+            </CtaLink>
+          )}
+        </Section>
+      )}
+      <Section containerClassName={classNames(style.featuredWrapper, {
+        [style.featuredGapBottom]: props.blok.show,
+        [style.featuredTop]: props.blok.textPosition === 'top' || (!props.blok.textPosition && isTablet),
+        [style.featuredBottom]: props.blok.textPosition === 'bottom' || (!props.blok.textPosition && !isTablet),
+      })}
+      >
+        <div className={classNames('featured-text', style.featuredTextWrapper)}>
+          <span>{currentProjectOverview.title}</span>
+          <CtaLink className={style.desktopCTA} href={routes.project(currentProject.slug)}>
+            {t('globals.see_full_project')}
+          </CtaLink>
+          <span className={style.featuredIndex}>
+            {getOrderNumber(currentIndex, true)}
+          </span>
+        </div>
+        <SeeMore cursorPosition={cursorPosition} show={modalShow} />
+        <Link className="featured-cover" href={routes.project(currentProject.slug)}>
+          <Image
+            className={style.featuredCover}
+            src={currentProjectOverview.cover.filename}
+            alt={currentProjectOverview.cover.alt}
+            onMouseEnter={() => handleShowModal(true)}
+            onMouseLeave={() => handleShowModal(false)}
+          />
+        </Link>
+        <CtaLink className={style.mobileCTA} href={routes.project(currentProject.slug)}>
           {t('globals.see_full_project')}
         </CtaLink>
-        <span className={style.featuredIndex}>
-          {getOrderNumber(currentIndex, true)}
-        </span>
-      </div>
-      <SeeMore cursorPosition={cursorPosition} show={modalShow} />
-      <Link className="featured-cover" href={routes.project(currentProject.slug)}>
-        <Image
-          className={style.featuredCover}
-          src={currentProjectOverview.cover.filename}
-          alt={currentProjectOverview.cover.alt}
-          onMouseEnter={() => handleShowModal(true)}
-          onMouseLeave={() => handleShowModal(false)}
-        />
-      </Link>
-      <CtaLink className={style.mobileCTA} href={routes.project(currentProject.slug)}>
-        {t('globals.see_full_project')}
-      </CtaLink>
-    </Section>
+      </Section>
+    </>
   );
 }

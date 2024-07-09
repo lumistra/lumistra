@@ -7,8 +7,6 @@ import type { ContactData } from '@/types/components';
 import type { SbBlokData } from '@storyblok/react';
 
 type Props = {
-  className?: string
-  ctaClassName?: string
   blok: SbBlokData & ContactData
 };
 
@@ -22,7 +20,10 @@ export default function Contact(props: Props) {
   });
 
   return (
-    <Section containerClassName={classNames(style.contactCTAWrapper, props.className)}>
+    <Section containerClassName={classNames(style.contactCTAWrapper, {
+      [style.noBorderContact]: props.blok.noBorder,
+    })}
+    >
       <div className={classNames('contact-animation-wrapper', style.contentWrapper)}>
         <span className={classNames({
           [style.title]: !props.blok.small,
@@ -33,9 +34,10 @@ export default function Contact(props: Props) {
         </span>
       </div>
       <CtaLink
-        className={classNames('cta-link', props.ctaClassName, {
+        className={classNames({
           [style.action]: !props.blok.small,
           [style.actionSmall]: props.blok.small,
+          [style.mobileInvertColors]: props.blok.mobileInvertColors,
         })}
         href={props.blok.cta[0].link.url}
       >

@@ -10,7 +10,7 @@ export default function PageTransition() {
   const path = getRawPath(router.asPath, false);
 
   useEffect(() => {
-    if (!includes(path, `${routes.work}/`)) return;
+    if (!includes(path, 'projects/')) return;
 
     const timeoutId = setTimeout(() => {
       const transitionTitle = document.querySelector('meta[name="transition-title"]')?.getAttribute('content') || 'Lumistra';

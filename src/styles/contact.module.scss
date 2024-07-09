@@ -25,6 +25,26 @@
     padding: 0;
   }
 
+  &.noBorderContact {
+    border: none;
+    margin-bottom: 120px;
+    margin-top: 120px;
+
+    @media screen and (max-width: $laptop) {
+      margin-bottom: 0;
+      margin-top: 0;
+
+      .ctaAction {
+        background-color: $white !important;
+        color: $black !important;
+
+        svg path {
+          stroke: $primary !important;
+        }
+      }
+    }
+  }
+
   .contentWrapper {
     display: flex;
     flex-direction: column;
@@ -163,6 +183,17 @@
       @media screen and (max-width: $mobile) {
         height: 20px;
         width: 20px;
+      }
+    }
+  }
+
+  .mobileInvertColors {
+    @media screen and (max-width: $laptop) {
+      background-color: $white !important;
+      color: $black !important;
+
+      svg * {
+        stroke: $primary !important;
       }
     }
   }
