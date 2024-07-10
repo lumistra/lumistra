@@ -18,7 +18,7 @@ export default function TripleImage(props: Props) {
   const images = [props.blok.firstImage, props.blok.secondImage, props.blok.thirdImage];
 
   return (
-    <Section containerClassName={style.tripleImageWrapper} {...storyblokEditable(props.blok)}>
+    <Section containerClassName={style.tripleImageWrapper} storyblokEditable={storyblokEditable(props.blok)}>
       {map(images, (image, index) => (
         <Lightbox key={index} image={image}>
           <Image

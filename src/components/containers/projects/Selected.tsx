@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import { map } from 'lodash';
 import CtaLink from '@/components/elements/CtaLink';
@@ -6,20 +7,17 @@ import Image from '@/components/elements/Image';
 import Link from '@/components/elements/Link';
 import SeeMore from '@/components/elements/SeeMore';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
-import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/projects/selected.module.scss';
 import { routes } from '@/utils';
 import Section from '../Section';
 import type { CursorPosition } from '@/components/elements/SeeMore';
 import type { SelectedData } from '@/types/projects';
-import type { SbBlokData } from '@storyblok/react';
 
 type Props = {
   blok: SbBlokData & SelectedData
 };
 
 export default function Selected(props: Props) {
-  const { t } = useTranslations();
   const [modalShow, setModalShow] = useState(false);
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
 
@@ -48,7 +46,7 @@ export default function Selected(props: Props) {
   };
 
   return (
-    <Section containerClassName={style.selectedWrapper}>
+    <Section containerClassName={style.selectedWrapper} storyblokEditable={storyblokEditable(props.blok)}>
       <div className={classNames('selected-animation-wrapper', style.selectedTextWrapper)}>
         <span className={style.selectedTitle}>
           {props.blok.section}
@@ -57,7 +55,7 @@ export default function Selected(props: Props) {
           <span className={style.selectedTitle}>
             {props.blok.title}
           </span>
-          <CtaLink className={style.selectedCTA} href={props.blok.cta[0].link.url}>
+          <CtaLink className={style.selectedCTA} link={props.blok.cta[0].link}>
             {props.blok.cta[0].text}
           </CtaLink>
         </div>
@@ -84,8 +82,8 @@ export default function Selected(props: Props) {
             </Link>
           );
         })}
-        <CtaLink className={style.selectedMobileCTA} href={routes.work}>
-          {t('globals.see_all_projects')}
+        <CtaLink className={style.selectedMobileCTA} link={props.blok.cta[0].link}>
+          {props.blok.cta[0].text}
         </CtaLink>
       </div>
     </Section>

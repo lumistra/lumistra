@@ -1,5 +1,5 @@
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
-import { get, isArray, map } from 'lodash';
+import { get, map } from 'lodash';
 import { useRouter } from 'next/router';
 import useTranslations, { defaultLocale } from '@/hooks/useTranslations';
 import style from '@/styles/article.module.scss';
@@ -18,9 +18,7 @@ type Props = {
 export default function Article(props: Props) {
   const { t } = useTranslations();
   const router = useRouter();
-  const recommended = isArray(props.blok.recommended)
-    ? props.blok.recommended[0]
-    : props.blok.recommended;
+  const { recommended } = props.blok;
   const recommendedArticle = get(recommended, 'content.headline[0]', null) as HeadlineData | null;
   const article = props.blok;
   const [headline] = article.headline;

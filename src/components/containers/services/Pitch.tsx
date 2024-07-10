@@ -1,3 +1,4 @@
+import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import { map } from 'lodash';
 import TextMask from '@/components/elements/TextMask';
 import useScrollAnimations from '@/hooks/useScrollAnimations';
@@ -5,7 +6,6 @@ import style from '@/styles/services/pitch.module.scss';
 import { getOrderNumber } from '@/utils';
 import Section from '../Section';
 import type { PitchData } from '@/types/components';
-import type { SbBlokData } from '@storyblok/react';
 
 type Props = {
   blok: SbBlokData & PitchData
@@ -20,7 +20,11 @@ export default function Pitch(props: Props) {
   });
 
   return (
-    <Section className="pitch-animation-wrapper" containerClassName={style.pitchWrapper}>
+    <Section
+      className="pitch-animation-wrapper"
+      containerClassName={style.pitchWrapper}
+      storyblokEditable={storyblokEditable(props.blok)}
+    >
       {map(props.blok.items, (item, index) => (
         <div key={index} className={style.pitchItem}>
           <TextMask identifier="pitch-index-mask" className={style.pitchNumber}>

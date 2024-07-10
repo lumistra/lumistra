@@ -3,6 +3,7 @@ import StoryblokStory from '@storyblok/react/story';
 import { includes, reduce, some } from 'lodash';
 import CookieConsent from '@/components/elements/CookieConsent';
 import PageTransition from '@/components/elements/PageTransition';
+import PrivacyPolicy from '@/components/pages/PrivacyPolicy';
 import { defaultLocale, locales } from '@/hooks/useTranslations';
 import { generateStaticPaths, routes } from '@/utils';
 import { about } from '@mocks/about';
@@ -29,7 +30,11 @@ export default function Page(props: Props) {
     <>
       <div id="page-wrapper">
         <StoryblokStory story={props.header} />
-        <StoryblokStory story={props.page} />
+        {props.page ? (
+          <StoryblokStory story={props.page} />
+        ) : (
+          <PrivacyPolicy />
+        )}
       </div>
       <StoryblokStory story={props.footer} />
       <PageTransition />
@@ -43,6 +48,8 @@ type StaticProps = {
     slug?: string[]
   }
 };
+
+const storyVersion: 'published' | 'draft' = 'published';
 
 export async function getStaticProps(props: StaticProps) {
   const storyblokApi = getStoryblokApi();
@@ -58,25 +65,25 @@ export async function getStaticProps(props: StaticProps) {
   if (process.env.mockApi) {
     let page = null;
     switch (true) {
-      case includes(slugPath, 'articles/'):
+      case includes(slugPath, `${routes.expected.articles}/`):
         page = article;
         break;
-      case includes(slugPath, 'projects/'):
+      case includes(slugPath, `${routes.expected.projects}/`):
         page = project;
         break;
-      case slugPath === '/news':
+      case slugPath === routes.mocks.news:
         page = news;
         break;
-      case slugPath === '/work':
+      case slugPath === routes.mocks.work:
         page = work;
         break;
-      case slugPath === '/services':
+      case slugPath === routes.mocks.services:
         page = services;
         break;
-      case slugPath === '/about':
+      case slugPath === routes.mocks.about:
         page = about;
         break;
-      case slugPath === '/contact':
+      case slugPath === routes.mocks.contact:
         page = contact;
         break;
       case !slugPath:
@@ -97,14 +104,14 @@ export async function getStaticProps(props: StaticProps) {
   }
 
   const [{ data: header }, { data: footer }] = await Promise.all([
-    storyblokApi.get(`cdn/stories/${locale}/global/header`, { version: 'published' }),
-    storyblokApi.get(`cdn/stories/${locale}/global/footer`, { version: 'published' }),
+    storyblokApi.get(`cdn/stories/${locale}/global/header`, { version: storyVersion }),
+    storyblokApi.get(`cdn/stories/${locale}/global/footer`, { version: storyVersion }),
   ]);
 
   const { data: page } = slugPath === routes.privacyPolicy
     ? { data: { story: null } }
     : await storyblokApi.get(`cdn/stories/${apiPath}`, {
-      version: 'published',
+      version: storyVersion,
       resolve_relations: [
         'work.projects',
         'featured.projects',
@@ -127,7 +134,7 @@ export async function getStaticProps(props: StaticProps) {
 
 export async function getStaticPaths() {
   const storyblokApi = getStoryblokApi();
-  const { data } = process.env.mockApi ? { data: cmsLinks } : await storyblokApi.get('cdn/links', { version: 'published', per_page: 1000 });
+  const { data } = process.env.mockApi ? { data: cmsLinks } : await storyblokApi.get('cdn/links', { version: storyVersion, per_page: 1000 });
 
   const links = reduce(data.links, (res, link) => {
     if (link.is_folder) return res;

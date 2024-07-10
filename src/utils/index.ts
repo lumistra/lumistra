@@ -1,21 +1,28 @@
-import Parser from 'html-react-parser';
 import {
-  compact, forEach, includes, map, replace, split,
+  compact, forEach, includes, map, split,
 } from 'lodash';
 import { defaultLocale, locales } from '@/hooks/useTranslations';
 
 export const isProd = process.env.NODE_ENV === 'production';
 
 export const routes = {
-  home: '/',
-  work: '/work',
-  project: (slug: string) => `/projects/${slug}`,
-  about: '/about',
-  contact: '/contact',
-  services: '/services',
-  news: '/news',
-  article: (slug: string) => `/articles/${slug}`,
+  mocks: {
+    home: '/',
+    news: '/news',
+    work: '/work',
+    about: '/about',
+    contact: '/contact',
+    services: '/services',
+  },
+  expected: {
+    news: '/news',
+    work: '/work',
+    articles: '/articles',
+    projects: '/projects',
+  },
   privacyPolicy: '/privacy-policy',
+  article: (slug: string) => `/articles/${slug}`,
+  project: (slug: string) => `/projects/${slug}`,
 };
 
 export const getRawPath = (path: string, stripLocale: boolean = true) => {
@@ -56,12 +63,4 @@ export const getOrderNumber = (index: number, brackets?: boolean): string => {
   if (brackets) return '(' + number + ')';
 
   return number;
-};
-
-export const parseMarkdown = (markdown: string) => {
-  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
-  let input = markdown;
-  input = replace(input, linkRegex, '<a href="$2" target="_blank">$1</a>');
-
-  return Parser(input);
 };

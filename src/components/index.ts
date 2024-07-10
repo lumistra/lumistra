@@ -23,22 +23,22 @@ import TextImage from '@/components/elements/layouts/TextImage';
 import TripleImage from '@/components/elements/layouts/TripleImage';
 import Meta from '@/components/elements/Meta';
 import Article from '@/components/pages/Article';
-import Main from '@/components/pages/Main';
 import News from '@/components/pages/News';
+import Page from '@/components/pages/Page';
 import Project from '@/components/pages/Project';
 import Work from '@/components/pages/Work';
 
 const components = {
-  // Content-Type block
+  // Content-Type blocks
   navigation: Navigation,
   footer: Footer,
-  page: Main,
+  page: Page,
   work: Work,
   news: News,
   article: Article,
   project: Project,
 
-  // Nested block
+  // Nested blocks
   sidenav: Sidenav,
   meta: Meta,
   hero: Hero,
@@ -55,7 +55,7 @@ const components = {
   aboutSection: AboutSection,
   contact: Contact,
 
-  // Projects & Articles
+  // Projects & Articles blocks
   overview: Overview,
   headline: Headline,
   singleImage: SingleImage,

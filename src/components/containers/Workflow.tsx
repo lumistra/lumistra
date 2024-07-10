@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import { map } from 'lodash';
 import Plus from '@/assets/svg/plus.svg';
@@ -9,7 +10,6 @@ import Section from './Section';
 import RichText from '../elements/RichText';
 import TextMask from '../elements/TextMask';
 import type { WorkflowData } from '@/types/components';
-import type { SbBlokData } from '@storyblok/react';
 
 type Props = {
   blok: SbBlokData & WorkflowData
@@ -34,6 +34,7 @@ function Workflow(props: Props) {
       id="workflow"
       className={style.backgroundWrapper}
       containerClassName={style.wrapper}
+      storyblokEditable={storyblokEditable(props.blok)}
     >
       <div className={style.header}>
         <span className={style.title}>{props.blok.title}</span>

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { StoryblokComponent } from '@storyblok/react';
+import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import { map } from 'lodash';
 import Arrow from '@/assets/svg/arrow.svg';
@@ -69,7 +69,7 @@ export default function Work(props: Props) {
   };
 
   return (
-    <main>
+    <main {...storyblokEditable(props.blok)}>
       {map(props.blok.meta, (meta: SbBlokData) => (
         <StoryblokComponent key={meta._uid} blok={meta} />
       ))}

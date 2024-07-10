@@ -1,24 +1,22 @@
 import { useRef, useState } from 'react';
+import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import {
   floor, get, isEmpty, map,
 } from 'lodash';
 import Arrow from '@/assets/svg/arrow.svg';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
-import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/alt-background.module.scss';
 import Section from './Section';
 import CtaLink from '../elements/CtaLink';
 import TextMask from '../elements/TextMask';
 import type { AltBackgroundSectionData } from '@/types/components';
-import type { SbBlokData } from '@storyblok/react';
 
 type Props = {
   blok: SbBlokData & AltBackgroundSectionData
 };
 
 function AltBackgroundSection(props: Props) {
-  const { t } = useTranslations();
   const [wordIndex, setWordIndex] = useState(-1);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -56,6 +54,7 @@ function AltBackgroundSection(props: Props) {
         [style.primaryBackground]: props.blok.background === 'primary',
       })}
       containerClassName={style.altBackgroundContainer}
+      storyblokEditable={storyblokEditable(props.blok)}
     >
       <h3 ref={titleRef} className={style.altBackgroundTitle}>
         {props.blok.animated && map(words, (word, index) => (
@@ -85,15 +84,15 @@ function AltBackgroundSection(props: Props) {
       {!isEmpty(props.blok.cta) && (
         <CtaLink
           className={style.altBackgroundCTA}
-          href={get(props.blok.cta, '[0].link.url', '')}
+          link={get(props.blok.cta, '[0].link')}
         >
           {get(props.blok.cta, '[0].text', '')}
         </CtaLink>
       )}
-      {props.blok.footnote && (
+      {props.blok.footnoteCTA && (
         <TextMask identifier="alt-background-animation">
           <span className={style.altBackgroundFootnote}>
-            {t('globals.scroll')}
+            {props.blok.footnoteCTA}
             <Arrow />
           </span>
         </TextMask>

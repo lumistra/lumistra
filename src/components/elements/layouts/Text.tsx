@@ -14,7 +14,7 @@ type Props = {
 
 export default function Text(props: Props) {
   return (
-    <Section containerClassName={style.textWrapper} {...storyblokEditable(props.blok)}>
+    <Section containerClassName={style.textWrapper} storyblokEditable={storyblokEditable(props.blok)}>
       <RichText className={classNames({
         [style.alignLeft]: props.blok.align === 'left',
         [style.alignRight]: props.blok.align === 'right',

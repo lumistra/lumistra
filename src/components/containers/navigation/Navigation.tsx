@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import { map } from 'lodash';
 import Icon from '@/assets/svg/icon.svg';
@@ -8,7 +9,6 @@ import Menu from '@/components/elements/Menu';
 import { useScreenSize } from '@/hooks/useScreenSize';
 import Sidenav from './Sidenav';
 import type { NavigationData } from '@/types/globals';
-import type { SbBlokData } from '@storyblok/react';
 
 type Props = {
   blok: SbBlokData & NavigationData
@@ -38,7 +38,7 @@ export default function Navigation(props: Props) {
 
   return (
     <>
-      <nav className="navigation-wrapper">
+      <nav className="navigation-wrapper" {...storyblokEditable(props.blok)}>
         <div className="navigation-container animate-in">
           <Link href="/">
             {isTop && isDesktop ? (
@@ -62,7 +62,7 @@ export default function Navigation(props: Props) {
             {isTop && map(props.blok.links, (link) => (
               <Link
                 key={link.link.url}
-                href={link.link.url}
+                link={link.link}
                 className={classNames('nav-link', {
                   'nav-visible': !isSidenavOpen,
                   'nav-hidden': isSidenavOpen,

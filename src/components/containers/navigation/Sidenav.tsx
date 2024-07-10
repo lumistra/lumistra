@@ -12,10 +12,11 @@ type Props = {
 
 export default function Sidenav(props: Props) {
   return (
-    <div className={classNames('sidenav-wrapper', {
-      'sidenav-closed': !props.isOpen,
-      'sidenav-open': props.isOpen,
-    })}
+    <div
+      className={classNames('sidenav-wrapper', {
+        'sidenav-closed': !props.isOpen,
+        'sidenav-open': props.isOpen,
+      })}
     >
       <div className="sidenav-background-container">
         <div className="sidenav-container">
@@ -50,7 +51,7 @@ export default function Sidenav(props: Props) {
                 <Link
                   className="nav-link"
                   key={route.link.url}
-                  href={route.link.url}
+                  link={route.link}
                   onClick={props.onClose}
                   addActiveFlag
                 >

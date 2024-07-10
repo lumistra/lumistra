@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import { floor, map } from 'lodash';
 import Icon from '@/assets/svg/icon.svg';
 import Logo from '@/assets/svg/logo.svg';
@@ -11,7 +12,6 @@ import Link from '../elements/Link';
 import LocaleSwitcher from '../elements/LocaleSwitcher';
 import ToTop from '../elements/ToTop';
 import type { FooterData } from '@/types/globals';
-import type { SbBlokData } from '@storyblok/react';
 
 type Props = {
   blok: SbBlokData & FooterData
@@ -66,6 +66,7 @@ export default function Footer(props: Props) {
         bottom: bottomOffset,
         transform: `translateY(${animationOffset}%)`,
       }}
+      {...storyblokEditable(props.blok)}
     >
       <div className="content-container">
         <div className="identity-wrapper">
@@ -85,7 +86,7 @@ export default function Footer(props: Props) {
               <Link
                 className="footer-link"
                 key={route.link.url}
-                href={route.link.url}
+                link={route.link}
               >
                 {route.label}
               </Link>

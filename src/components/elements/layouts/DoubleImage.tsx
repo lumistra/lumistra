@@ -17,7 +17,7 @@ export default function DoubleImage(props: Props) {
   const images = [props.blok.firstImage, props.blok.secondImage];
 
   return (
-    <Section containerClassName={style.doubleImageWrapper} {...storyblokEditable(props.blok)}>
+    <Section containerClassName={style.doubleImageWrapper} storyblokEditable={storyblokEditable(props.blok)}>
       {map(images, (image, index) => (
         <Lightbox key={index} image={image}>
           <Image

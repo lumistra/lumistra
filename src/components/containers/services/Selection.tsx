@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import type { ChangeEvent, KeyboardEvent } from 'react';
 import ReactTextareaAutosize from 'react-textarea-autosize';
+import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import {
   filter, first, isEmpty, map, some, split, startsWith, toLower,
@@ -9,7 +10,6 @@ import RichText from '@/components/elements/RichText';
 import style from '@/styles/services/selection.module.scss';
 import Section from '../Section';
 import type { SelectionData } from '@/types/components';
-import type { SbBlokData } from '@storyblok/react';
 
 enum State {
   idle = 'idle',
@@ -80,9 +80,11 @@ export default function Selection(props: Props) {
   };
 
   return (
-    <Section containerClassName={classNames(style.servicesWrapper, {
-      [style.breakLine]: props.blok.heroHide,
-    })}
+    <Section
+      containerClassName={classNames(style.servicesWrapper, {
+        [style.breakLine]: props.blok.heroHide,
+      })}
+      storyblokEditable={storyblokEditable(props.blok)}
     >
       {!props.blok.heroHide && (
         <div className={style.heroWrapper}>

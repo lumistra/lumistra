@@ -18,8 +18,9 @@ export type ProjectData = {
 export type FeaturedData = {
   show?: boolean,
   title?: string,
-  cta?: [CTALinkData],
+  sectionCTA?: [CTALinkData],
   textPosition?: 'top' | 'bottom'
+  projectCTA: string,
   projects: ISbStoryData<ProjectData>[]
 };
 

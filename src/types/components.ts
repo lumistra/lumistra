@@ -16,8 +16,8 @@ export type MetaData = {
 
 export type HeroData = {
   title: string
+  footnoteCTA?: string
   gradient: boolean
-  footnote: boolean
   spacingBottom: boolean
 };
 
@@ -37,10 +37,10 @@ export type AltBackgroundSectionData = {
   title: string
   paragraph: string
   cta?: [CTALinkData]
+  footnoteCTA?: string
   background: 'dark' | 'primary'
   gridParagraph: boolean
   animated: boolean
-  footnote: boolean
 };
 
 export type SelectionData = {

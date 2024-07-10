@@ -1,17 +1,12 @@
 {
   "globals": {
     "language": "Jezik",
-    "socials": "Društvene mreže",
     "privacy_policy": "Pravila privatnosti",
     "cookies": "Kolačići",
     "back_to_top": "Natrag na vrh",
-    "see_full_project": "Cijeli projekt",
-    "see_all_projects": "Svi projekti",
-    "read_all": "Sve novosti",
     "read_next": "Sljedeće",
     "next_project": "Sljedeće",
     "see_more": "Vidi više",
-    "overview": "Pregled",
-    "scroll": "Pogledaj niže u čemu vam možemo pomoći"
+    "overview": "Pregled"
   }
 }

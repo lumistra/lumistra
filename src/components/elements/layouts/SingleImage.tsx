@@ -13,13 +13,12 @@ type Props = {
 
 export default function SingleImage(props: Props) {
   return (
-    <Section>
+    <Section storyblokEditable={storyblokEditable(props.blok)}>
       <Lightbox image={props.blok.image}>
         <Image
           className={style.singleImage}
           src={props.blok.image.filename}
           alt={props.blok.image.alt}
-          storyblokEditable={storyblokEditable(props.blok)}
         />
       </Lightbox>
     </Section>

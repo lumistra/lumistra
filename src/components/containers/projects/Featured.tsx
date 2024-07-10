@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { type SbBlokData, storyblokEditable } from '@storyblok/react';
 import classNames from 'classnames';
 import CtaLink from '@/components/elements/CtaLink';
 import Image from '@/components/elements/Image';
@@ -6,26 +7,23 @@ import Link from '@/components/elements/Link';
 import SeeMore from '@/components/elements/SeeMore';
 import { useScreenSize } from '@/hooks/useScreenSize';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
-import useTranslations from '@/hooks/useTranslations';
 import style from '@/styles/projects/featured.module.scss';
 import { getOrderNumber, routes } from '@/utils';
 import Section from '../Section';
 import type { CursorPosition } from '@/components/elements/SeeMore';
 import type { FeaturedData } from '@/types/projects';
-import type { SbBlokData } from '@storyblok/react';
 
 type Props = {
   blok: SbBlokData & FeaturedData
 };
 
 export default function Featured(props: Props) {
-  const { t } = useTranslations();
   const { isTablet } = useScreenSize();
   const [modalShow, setModalShow] = useState(false);
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentProject = props.blok.projects[currentIndex];
-  const currentProjectOverview = currentProject.content.overview[0];
+  const [currentProjectOverview] = currentProject.content.overview || [];
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -76,23 +74,25 @@ export default function Featured(props: Props) {
       {props.blok.show && (
         <Section containerClassName={style.featuredHeaderWrapper}>
           <h3>{props.blok.title}</h3>
-          {props.blok.cta && (
-            <CtaLink href={props.blok.cta[0].link.url}>
-              {props.blok.cta[0].text}
+          {props.blok.sectionCTA && (
+            <CtaLink link={props.blok.sectionCTA[0].link}>
+              {props.blok.sectionCTA[0].text}
             </CtaLink>
           )}
         </Section>
       )}
-      <Section containerClassName={classNames(style.featuredWrapper, {
-        [style.featuredGapBottom]: props.blok.show,
-        [style.featuredTop]: props.blok.textPosition === 'top' || (!props.blok.textPosition && isTablet),
-        [style.featuredBottom]: props.blok.textPosition === 'bottom' || (!props.blok.textPosition && !isTablet),
-      })}
+      <Section
+        containerClassName={classNames(style.featuredWrapper, {
+          [style.featuredGapBottom]: props.blok.show,
+          [style.featuredTop]: props.blok.textPosition === 'top' || (!props.blok.textPosition && isTablet),
+          [style.featuredBottom]: props.blok.textPosition === 'bottom' || (!props.blok.textPosition && !isTablet),
+        })}
+        storyblokEditable={storyblokEditable(props.blok)}
       >
         <div className={classNames('featured-text', style.featuredTextWrapper)}>
           <span>{currentProjectOverview.title}</span>
           <CtaLink className={style.desktopCTA} href={routes.project(currentProject.slug)}>
-            {t('globals.see_full_project')}
+            {props.blok.projectCTA}
           </CtaLink>
           <span className={style.featuredIndex}>
             {getOrderNumber(currentIndex, true)}
@@ -109,7 +109,7 @@ export default function Featured(props: Props) {
           />
         </Link>
         <CtaLink className={style.mobileCTA} href={routes.project(currentProject.slug)}>
-          {t('globals.see_full_project')}
+          {props.blok.projectCTA}
         </CtaLink>
       </Section>
     </>

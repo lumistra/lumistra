@@ -5489,6 +5489,7 @@ export const home = {
           },
         ],
         component: 'featured',
+        projectCTA: 'See full project',
         textPosition: 'top',
         _editable: '<!--#storyblok#{"name": "featured", "space": "286844", "uid": "fc6ef7d4-b5df-4ac5-9cd9-7f728934c6a4", "id": "519687689"}-->',
       },

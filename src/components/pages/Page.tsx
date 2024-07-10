@@ -1,13 +1,13 @@
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
 import { map } from 'lodash';
-import type { MainData } from '@/types/page';
+import type { PageData } from '@/types/page';
 import type { SbBlokData } from '@storyblok/react';
 
 type Props = {
-  blok: SbBlokData & MainData
+  blok: SbBlokData & PageData
 };
 
-export default function Main(props: Props) {
+export default function Page(props: Props) {
   return (
     <main {...storyblokEditable(props.blok)}>
       {map(props.blok.meta, (meta: SbBlokData) => (

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { StoryblokComponent } from '@storyblok/react';
+import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
 import { map } from 'lodash';
 import useScrollAnimations, { AnimationType } from '@/hooks/useScrollAnimations';
 import style from '@/styles/news.module.scss';
@@ -44,7 +44,7 @@ export default function News(props: Props) {
   };
 
   return (
-    <main>
+    <main {...storyblokEditable(props.blok)}>
       {map(props.blok.meta, (meta: SbBlokData) => (
         <StoryblokComponent key={meta._uid} blok={meta} />
       ))}
