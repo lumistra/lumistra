@@ -3,7 +3,13 @@ import type { CMSLink, LinkData } from '@/types/shared';
 export type SidenavData = {
   sitemap: LinkData[]
   socials: LinkData[]
-  cta: CMSLink
+  socialsLabel: string
+  cta?: CMSLink
+  darkMode?: {
+    label?: string,
+    on?: string
+    off?: string
+  }
 };
 
 export type NavigationData = {
