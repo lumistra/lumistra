@@ -14,11 +14,11 @@ type Props = {
 };
 
 export default function Sidenav(props: Props) {
-  const { isDark, setIsDark } = useDarkMode();
+  const { isDark, setIsDark } = useDarkMode({ enabled: props.data.darkModeEnabled || false });
 
   const darkModeOptions = [
-    { label: props.data.darkMode?.on, value: true },
-    { label: props.data.darkMode?.off, value: false },
+    { label: props.data.darkModeOn, value: true },
+    { label: props.data.darkModeOff, value: false },
   ];
 
   return (
@@ -34,9 +34,9 @@ export default function Sidenav(props: Props) {
           <div className="split-wrapper">
             <div className="content-wrapper">
               <LocaleSwitcher onClick={props.onClose} />
-              {!isEmpty(props.data.darkMode) && (
+              {props.data.darkModeEnabled && (
                 <div className="cta-wrapper">
-                  <span className="label">{props.data.darkMode?.label}</span>
+                  <span className="label">{props.data.darkModeLabel}</span>
                   <div className="options">
                     {map(darkModeOptions, (option, index) => (
                       <Fragment key={index}>

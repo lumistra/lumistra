@@ -52,7 +52,15 @@ export const header = {
     ],
     sidenav: [
       {
-        cta: null,
+        cta: {
+          id: '',
+          url: '',
+          email: '',
+          target: '_blank',
+          linktype: 'email',
+          fieldtype: 'multilink',
+          cached_url: '',
+        },
         _uid: 'bce81f55-51cd-4a35-8603-edbd18ac17e5',
         sitemap: [
           {
@@ -140,7 +148,7 @@ export const header = {
             _editable: '<!--#storyblok#{"name": "link", "space": "286844", "uid": "42a7be8d-bc80-4039-be4e-9cf6cd28c5a5", "id": "519687607"}-->',
           },
         ],
-        socialsLabel: 'Social media',
+
         socials: [
           {
             _uid: '723d462d-35e5-483a-8cc6-56291d72058d',
@@ -188,11 +196,11 @@ export const header = {
             _editable: '<!--#storyblok#{"name": "link", "space": "286844", "uid": "75d7a4a9-5a05-41da-9bb5-0a81157adf28", "id": "519687612"}-->',
           },
         ],
-        darkMode: {
-          label: 'Dark mode',
-          on: 'ON',
-          off: 'OFF',
-        },
+        socialsLabel: 'Social media',
+        darkModeOn: 'ON',
+        darkModeOff: 'OFF',
+        darkModeLabel: 'Dark mode',
+        darkModeEnabled: true,
         component: 'sidenav',
         _editable: '<!--#storyblok#{"name": "sidenav", "space": "286844", "uid": "bce81f55-51cd-4a35-8603-edbd18ac17e5", "id": "519687607"}-->',
       },

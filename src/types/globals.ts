@@ -4,12 +4,11 @@ export type SidenavData = {
   sitemap: LinkData[]
   socials: LinkData[]
   socialsLabel: string
+  darkModeOn?: 'ON',
+  darkModeOff?: 'OFF',
+  darkModeLabel?: 'Dark mode',
+  darkModeEnabled?: boolean,
   cta?: CMSLink
-  darkMode?: {
-    label?: string,
-    on?: string
-    off?: string
-  }
 };
 
 export type NavigationData = {

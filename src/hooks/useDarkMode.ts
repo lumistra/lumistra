@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
 
-export const useDarkMode = () => {
+type Props = {
+  enabled: boolean
+};
+
+export const useDarkMode = (props: Props) => {
   const [isDark, setIsDark] = useState(false);
   const storageKey = '__lumistra_dark_mode';
 
@@ -16,6 +20,8 @@ export const useDarkMode = () => {
   };
 
   useEffect(() => {
+    if (!props.enabled) return;
+
     const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
     const storedMode = sessionStorage.getItem(storageKey);
 
@@ -29,16 +35,20 @@ export const useDarkMode = () => {
     return () => {
       darkMode.removeEventListener('change', handler);
     };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
+    if (!props.enabled) return;
+
     const root = document.getElementsByTagName('html')[0];
     if (isDark) {
       root.classList.add('dark');
     } else {
       root.classList.remove('dark');
     }
-  }, [isDark]);
+  }, [isDark, props.enabled]);
 
   return {
     isDark,
