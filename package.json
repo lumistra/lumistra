@@ -1,12 +1,12 @@
 {
   "name": "lumistra",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:sitemap": "next-sitemap",
+    "build:sitemap": "next-sitemap --config next.sitemap.cjs",
     "start": "next start",
     "lint": "eslint .",
     "test": "jest",
